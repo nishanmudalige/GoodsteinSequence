@@ -45,18 +45,11 @@ hereditary_base_string <- function(number, base) {
 }
 
 
-hereditary_base_string(226, 2)
+# Test of hereditary_base_string function
+# hereditary_base_string(226, 2)
 
 
-# Example usage
-# number <- 266
-# base <- 2
-# result <- hereditary_base_string(number, base)
-# cat("Hereditary representation of", number, "in base", base, ":\n", result, "\n")
-
-
-
-goodstein_sequence = function(num, iter){
+goodstein_sequence = function(num, iter, hb = T, digits = T){
   
   for(b in 2:iter){
     
@@ -65,11 +58,23 @@ goodstein_sequence = function(num, iter){
       break
     }
     
-    print(num)
+    print(paste("Iteration", b-1, ":", num))
     
     current = hereditary_base_string(num, b)
     
-    print(current)
+    if(hb == T){
+      # print(current)
+      print(paste("Hereditary base", b, ":", current))
+    }
+    
+    if(digits == T){
+      # print(current)
+      print(paste("Digits", ":", nchar(num)))
+    }
+    
+    if(hb == T | digits == T){
+      cat(sep="\n\n")
+    }
     
     # increase base
     num = gsub(as.character(b), as.character(b+1), current)
@@ -82,6 +87,9 @@ goodstein_sequence = function(num, iter){
   
 }
 
-goodstein_sequence(13, 20)
+
+# goodstein_sequence(4, 1000)
+
+goodstein_sequence(13, 10, T, T)
 
 
