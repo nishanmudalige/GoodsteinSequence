@@ -55,10 +55,10 @@ goodstein_sequence = function(num, iter, hb = T, digits = T){
   
   for(b in 2:iter){
     
-    if(num == 0){
-      print(num)
-      break
-    }
+    # if(num == 0){
+    #   print(num)
+    #   break
+    # }
     
     print(paste("Iteration", b-1, ":", num))
     
@@ -67,10 +67,6 @@ goodstein_sequence = function(num, iter, hb = T, digits = T){
     if(hb == T){
       # print(current)
       print(paste("Hereditary base", b, ":", current))
-    }
-    
-    if(hb == T | digits == T){
-      cat(sep="\n\n")
     }
     
     # increase base
@@ -82,20 +78,31 @@ goodstein_sequence = function(num, iter, hb = T, digits = T){
     # Print number of digits
     if(digits == T){
       # print(current)
-      print(paste("Digits", ":", floor(log10(num)) + 1 ))
+      if(num > 1){
+        print(paste("Digits", ":", floor(log10(num)) + 1))
+      } else {
+        print(paste("Digits", ":", 1))
+      }
+      
     }
     
     b = b + 1
+    
+    # Leave an empty line to make the output easier to read
+    if(hb == T | digits == T){
+      cat(sep="\n\n")
+    }
+    
+    if(num == -1){
+      break
+    }
+    
   }
   
 }
 
 
-
-
-
-
-
-floor(log10( eval(parse(text = "21^(21 + 1) + 8*21^(8) + 19*21^(7)" )) )) + 1
+# Test
+goodstein_sequence(3, 10)
 
 
