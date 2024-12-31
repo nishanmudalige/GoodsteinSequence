@@ -1,5 +1,3 @@
-library(Rmpfr)
-
 # Function to compute the hereditary base representation as a string
 hereditary_base_string <- function(number, base) {
   if (number == 0) return("0")
@@ -53,7 +51,7 @@ hereditary_base_string <- function(number, base) {
 
 goodstein_sequence = function(num, iter, hb = T, digits = T){
   
-  for(b in 2:iter){
+  for(b in 2:(iter+1)){
     
     # if(num == 0){
     #   print(num)
