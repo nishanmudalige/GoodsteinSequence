@@ -15,12 +15,7 @@ goodstein_sequence(num, iter, hb = T, digits = T)
   \item{hb}{Whether the hereditary base representation is required.}
   \item{digits}{Whether the number of terms of the term is required.}
 }
-\details{}
-\value{}
-\references{}
 \author{Nishan Mudalige}
-\note{}
-\seealso{}
 \examples{
-goodstein_sequence(5, 3, TRUE, TRUE)
+## goodstein_sequence(5, 3, TRUE, TRUE)
 }

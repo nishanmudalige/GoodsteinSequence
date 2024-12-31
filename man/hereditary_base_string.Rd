@@ -15,16 +15,12 @@ hereditary_base_string(number, base)
   \item{number}{A Positive integer.}
   \item{base}{A base}
 }
-\details{}
 \value{A string with the hereditary base representation for the given base}
-\references{}
 \author{Nishan Mudalige}
-\note{}
-\seealso{}
 \examples{
-hereditary_base_string(10, 2)
-# "2^(2 + 1) + 2"
+## hereditary_base_string(10, 2)
+##  "2^(2 + 1) + 2"
 
-hereditary_base_string(2000, 5)
-# "3*5^(4) + 5^(3)"
+## hereditary_base_string(2000, 5)
+##  "3*5^(4) + 5^(3)"
 }
