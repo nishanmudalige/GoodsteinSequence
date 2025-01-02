@@ -98,9 +98,3 @@ goodstein_sequence = function(num, iter, hb = T, digits = T){
   }
   
 }
-
-
-# Test
-goodstein_sequence(3, 10)
-
-
